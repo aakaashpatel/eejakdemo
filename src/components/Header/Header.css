@@ -1,0 +1,101 @@
+.header {
+    width: 100%;
+    height: auto;
+    line-height: 80px;
+    background-color: var(--heading-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sticky Header */
+.sticky_header {
+    background-color: #fff;
+    box-shadow: 3px 3px 8px -3px #ddd;
+}
+
+/* Logo */
+.logo img {
+    width: 80%;
+}
+
+/* Navigation Menu */
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+    /* display: flex; */
+    /* gap: 20px; */
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav_item a:hover,
+.nav_item a.active_link {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu */
+.mobile_menu_icon {
+    font-size: 1.3rem;
+    color: whitesmoke;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+    .navigation {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--heading-color);
+        flex-direction: column;
+        text-align: left; /* Set text alignment to left */
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+        padding-left: 20px; /* Add some left padding */
+    }
+
+    .navigation.open {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    /* Align list items to the left */
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;  
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav_item {
+        width: 100%;
+    }
+
+    .nav_item a {
+        /* display: block; */
+        width: 100%;
+        /* padding: 10px 15px; */
+    }
+
+    .mobile_menu_icon {
+        display: block;
+    }
+}
